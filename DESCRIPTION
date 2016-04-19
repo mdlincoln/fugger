@@ -11,5 +11,7 @@ Description: Not all the plots that you make in R will be viewed in their
 License: MIT + file License
 LazyData: TRUE
 Imports:
+    ggplot2,
     imager
 RoxygenNote: 5.0.1
+Suggests: testthat
