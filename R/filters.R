@@ -24,3 +24,17 @@ fug_bw <- function(p, threshold = "auto") {
   plot(bw_raster)
   invisible(bw_raster)
 }
+
+#' Run an arbitrary function from imager
+#'
+#' @param p Expression that evaluates to a plot
+#' @param imager_fun imager function
+#' @param ... Arguments to pass to \code{imager_fun}
+#'
+#' @export
+fug_fun <- function(p, imager_fun, ...) {
+  raster_plot <- rasterize(p)
+  fugged_raster <- imager_fun(im = raster_plot, ...)
+  plot(fugged_raster)
+  invisible(fugged_raster)
+}
