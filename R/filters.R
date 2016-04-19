@@ -33,6 +33,9 @@ fug_bw <- function(p, threshold = "auto") {
 #'
 #' @export
 fug_fun <- function(p, imager_fun, ...) {
+  # Stop if imager_fun does not take "im" as an argument
+  stopifnot("im" %in% names(formals(imager_fun)))
+
   raster_plot <- rasterize(p)
   fugged_raster <- imager_fun(im = raster_plot, ...)
   plot(fugged_raster)

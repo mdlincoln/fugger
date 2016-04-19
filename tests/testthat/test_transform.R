@@ -14,4 +14,9 @@ test_that("rasterize returns a cimg object", {
 
 test_that("filters all succeed", {
   expect_s3_class(fug_gs(iris_ggplot), "cimg")
+  expect_s3_class(fug_bw(iris_ggplot), "cimg")
+})
+
+test_that("fug_fun only accepts compatible imager commands", {
+  expect_error(fug_fun(iris_ggplot, imager::average))
 })
