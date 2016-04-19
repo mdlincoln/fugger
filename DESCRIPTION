@@ -1,0 +1,15 @@
+Package: fugger
+Type: Package
+Title: Preview Plots When Printed On Poor Hardware
+Version: 0.0.1.9000
+Authors@R: person("Matthew", "Lincoln", email = "matthew.d.lincoln@gmail.com",
+  role = c("aut", "cre"))
+Description: Not all the plots that you make in R will be viewed in their
+    colorful and detailed glory. Preview plots under different conditions, such as
+    grayscale or black and white printing, photocopying, or display via a washed-out
+    projector.
+License: MIT + file License
+LazyData: TRUE
+Imports:
+    imager
+RoxygenNote: 5.0.1
