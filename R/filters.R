@@ -8,7 +8,7 @@ fug_gs <- function(p) {
   raster_plot <- rasterize(p)
   gs_raster <- imager::grayscale(raster_plot)
   try(dev.off(), silent = TRUE)
-  plot(gs_raster)
+  plot(gs_raster, xaxt = "n", yaxt = "n", ann = FALSE)
   invisible(gs_raster)
 }
 
@@ -23,7 +23,7 @@ fug_bw <- function(p, threshold = "auto") {
   raster_plot <- rasterize(p)
   bw_raster <- imager::threshold(imager::grayscale(raster_plot), thr = threshold)
   try(dev.off(), silent = TRUE)
-  plot(bw_raster)
+  plot(bw_raster, xaxt = "n", yaxt = "n", ann = FALSE)
   invisible(bw_raster)
 }
 
@@ -41,6 +41,6 @@ fug_fun <- function(p, imager_fun, ...) {
   raster_plot <- rasterize(p)
   fugged_raster <- imager_fun(im = raster_plot, ...)
   try(dev.off(), silent = TRUE)
-  plot(fugged_raster)
+  plot(fugged_raster, xaxt = "n", yaxt = "n", ann = FALSE)
   invisible(fugged_raster)
 }
